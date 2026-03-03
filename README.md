@@ -160,14 +160,17 @@ longcode： "✅ 完成！已提交 12 个任务到 feature 分支"
   -s, --status      显示当前执行状态
   -p, --pause       暂停执行
   -t, --max-tasks   限制执行的任务数量
-  -d, --dry-run     只生成计划，不执行
+  -d, --dry-run     演示模式，只显示不执行
   -v, --verbose     显示详细日志
   -q, --quiet       只显示关键信息
+      --no-preview  跳过预览直接执行
+      --no-cost     隐藏成本估算
 
 示例:
-  /longcode --dry-run           # 只生成计划
+  /longcode --dry-run           # 演示模式，只展示流程
   /longcode --resume            # 恢复中断的任务
   /longcode -t 5                # 只执行前 5 个任务
+  /longcode --no-preview        # 直接执行，跳过预览
 ```
 
 ### 第一次使用

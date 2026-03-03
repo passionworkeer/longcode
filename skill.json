@@ -1,6 +1,6 @@
 {
   "name": "longcode",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "长时间自主开发代理 - 从需求收集到代码部署的全流程自动化",
   "author": "Claude + User",
   "category": "automation",
@@ -34,7 +34,7 @@
       "name": "--dry-run",
       "type": "flag",
       "short": "-d",
-      "description": "只生成计划，不执行"
+      "description": "演示模式，只显示不执行"
     },
     {
       "name": "--verbose",
@@ -47,6 +47,16 @@
       "type": "flag",
       "short": "-q",
       "description": "只显示关键信息"
+    },
+    {
+      "name": "--no-preview",
+      "type": "flag",
+      "description": "跳过预览直接执行"
+    },
+    {
+      "name": "--no-cost",
+      "type": "flag",
+      "description": "隐藏成本估算"
     }
   ],
   "files": [
@@ -78,7 +88,11 @@
     "never_ask_user_during_execution": true,
     "skip_on_failure_after_retries": true,
     "show_progress_bar": true,
-    "estimate_duration": true
+    "estimate_duration": true,
+    "estimate_cost": true,
+    "interactive_planning": true,
+    "preview_before_execute": true,
+    "demo_mode": false
   },
   "acceptance_criteria": {
     "required": [
@@ -98,5 +112,17 @@
     "database": {"base": 30, "complexity_add": 15},
     "testing": {"base": 25, "complexity_add": 10},
     "bug_fix": {"base": 20, "complexity_add": 15}
+  },
+  "cost_estimates": {
+    "model": "claude-3.5-sonnet",
+    "input_rate": 3.0,
+    "output_rate": 15.0,
+    "task_tokens": {
+      "ui_component": {"min": 5000, "max": 15000},
+      "api_endpoint": {"min": 8000, "max": 20000},
+      "database": {"min": 5000, "max": 15000},
+      "testing": {"min": 3000, "max": 10000},
+      "bug_fix": {"min": 2000, "max": 8000}
+    }
   }
 }
