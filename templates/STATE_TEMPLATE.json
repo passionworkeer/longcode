@@ -1,0 +1,39 @@
+{
+  "version": "1.0.0",
+  "skill": "longcode",
+  "state": {
+    "phase": "planning",
+    "currentTask": null,
+    "lastUpdate": null
+  },
+  "project": {
+    "name": "",
+    "description": "",
+    "startTime": null,
+    "endTime": null,
+    "gitBranch": ""
+  },
+  "tasks": [],
+  "stats": {
+    "total": 0,
+    "completed": 0,
+    "failed": 0,
+    "inProgress": 0,
+    "pending": 0
+  },
+  "commits": [],
+  "failedTasks": [],
+  "decisions": [],
+  "files": {
+    "plan": "LONGCODE_PLAN.md",
+    "log": "LONGCODE_LOG.md",
+    "summary": "LONGCODE_SUMMARY.md",
+    "state": ".longcode_state.json"
+  },
+  "settings": {
+    "maxRetries": 3,
+    "taskTimeout": 7200000,
+    "logLevel": "balanced",
+    "autoCommit": true
+  }
+}
