@@ -1,6 +1,6 @@
 {
   "name": "longcode",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "长时间自主开发代理 - 从需求收集到代码部署的全流程自动化",
   "author": "Claude + User",
   "category": "automation",
@@ -9,28 +9,52 @@
     {
       "name": "--resume",
       "type": "flag",
+      "short": "-r",
       "description": "从上次中断处恢复执行"
     },
     {
       "name": "--status",
       "type": "flag",
+      "short": "-s",
       "description": "显示当前执行状态"
     },
     {
       "name": "--pause",
       "type": "flag",
+      "short": "-p",
       "description": "暂停执行"
     },
     {
       "name": "--max-tasks",
       "type": "number",
+      "short": "-t",
       "description": "限制执行的任务数量"
+    },
+    {
+      "name": "--dry-run",
+      "type": "flag",
+      "short": "-d",
+      "description": "只生成计划，不执行"
+    },
+    {
+      "name": "--verbose",
+      "type": "flag",
+      "short": "-v",
+      "description": "显示详细日志"
+    },
+    {
+      "name": "--quiet",
+      "type": "flag",
+      "short": "-q",
+      "description": "只显示关键信息"
     }
   ],
   "files": [
     "prompt.md",
     "skill.md",
-    "README.md"
+    "README.md",
+    "COMPETITIVE_ANALYSIS.md",
+    "OPTIMIZATION.md"
   ],
   "dependencies": [
     "planner",
@@ -52,7 +76,9 @@
     "log_level": "balanced",
     "require_questions": 10,
     "never_ask_user_during_execution": true,
-    "skip_on_failure_after_retries": true
+    "skip_on_failure_after_retries": true,
+    "show_progress_bar": true,
+    "estimate_duration": true
   },
   "acceptance_criteria": {
     "required": [
@@ -65,5 +91,12 @@
       "test_coverage_80_percent",
       "performance_metrics_met"
     ]
+  },
+  "time_estimates": {
+    "ui_component": {"base": 30, "complexity_add": 15},
+    "api_endpoint": {"base": 45, "complexity_add": 20},
+    "database": {"base": 30, "complexity_add": 15},
+    "testing": {"base": 25, "complexity_add": 10},
+    "bug_fix": {"base": 20, "complexity_add": 15}
   }
 }
