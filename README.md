@@ -232,6 +232,33 @@ longcode/
 
 ---
 
+## 📦 两个版本
+
+| 版本 | 描述 | 文件数 | 适用场景 |
+|------|------|--------|----------|
+| **longcode (完整版)** | 全功能版本 | 17 个文件 | 大型项目，需要完整控制 |
+| **longcode-lite** | 精简版本 | 2 个文件 | 快速任务，简单需求 |
+
+### lite 版本特点
+
+- 只有 2 个文件（`LITE.md` + `prompt-lite.md`）
+- 3-5 个问题（不是 10+）
+- 无检查点、无成本估算
+- 快速启动，快速完成
+
+### lite 版本使用
+
+```bash
+# 使用 lite 版本
+cp LITE.md ~/.claude/skills/longcode-lite/
+cp prompt-lite.md ~/.claude/skills/longcode-lite/prompt.md
+
+# 然后使用
+/longcode-lite 创建一个登录页面
+```
+
+---
+
 ## 🔧 安装
 
 ```bash

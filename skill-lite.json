@@ -1,0 +1,29 @@
+{
+  "name": "longcode-lite",
+  "version": "1.0.0",
+  "description": "精简版 longcode - 简单、直接的自主开发代理",
+  "author": "Claude + User",
+  "category": "automation",
+  "tags": ["automation", "simple", "agent"],
+  "parameters": [
+    {
+      "name": "--resume",
+      "type": "flag",
+      "description": "从上次中断处恢复"
+    },
+    {
+      "name": "--dry-run",
+      "type": "flag",
+      "description": "演示模式，只显示不执行"
+    }
+  ],
+  "files": [
+    "LITE.md",
+    "prompt-lite.md"
+  ],
+  "settings": {
+    "questions": "3-5",
+    "checkpoint": false,
+    "cost_limit": 5.0
+  }
+}
