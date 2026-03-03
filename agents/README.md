@@ -174,4 +174,4 @@
 
 ---
 
-*Agent Team 定义 - v1.3.0*
+*Agent Team 定义 - v1.6.0*

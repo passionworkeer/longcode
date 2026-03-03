@@ -167,6 +167,6 @@ git merge {{GIT_BRANCH}}
 
 ---
 
-*生成: longcode skill v1.0.0*
+*生成: longcode skill v1.6.0*
 *项目: {{PROJECT_NAME}}*
 *完成时间: {{COMPLETION_TIME}}*

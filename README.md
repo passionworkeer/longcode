@@ -6,7 +6,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blue)](skill.json)
-[![Version](https://img.shields.io/badge/Version-1.0.0-green)](skill.json)
+[![Version](https://img.shields.io/badge/Version-1.6.0-green)](skill.json)
 
 ## 🎯 一句话说清楚
 

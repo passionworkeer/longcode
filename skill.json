@@ -79,14 +79,17 @@
     "CRITIQUE_RESPONSE.md",
     "agents/"
   ],
-  "dependencies": [
-    "planner",
-    "tdd-workflow",
-    "security-review",
-    "coding-standards",
-    "frontend-patterns",
-    "backend-patterns"
-  ],
+  "dependencies": {
+    "note": "这些是可选的外部 skill，不存在时会使用内置逻辑",
+    "optional": [
+      "planner",
+      "tdd-workflow",
+      "security-review",
+      "coding-standards",
+      "frontend-patterns",
+      "backend-patterns"
+    ]
+  },
   "settings": {
     "max_task_duration": 120,
     "max_retries": 3,
