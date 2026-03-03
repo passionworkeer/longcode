@@ -235,11 +235,42 @@ longcode/
 ## 🔧 安装
 
 ```bash
-# 复制到 Claude Code 技能目录
+# 1. 复制到 Claude Code 技能目录
 cp -r longcode ~/.claude/skills/
 
-# 重启 Claude Code 使其生效
+# 2. 重启 Claude Code 使其生效
+#    - 关闭并重新打开 Claude Code
+#    - 或者在设置中重新加载技能
 ```
+
+### 快速开始
+
+```bash
+# 方式 1：使用 slash command
+/longcode
+
+# 方式 2：描述你的需求
+用 longcode 创建一个用户登录功能
+```
+
+### 前置要求
+
+| 要求 | 说明 |
+|------|------|
+| Claude Code | 需要已安装并配置好 Claude Code |
+| Git | 需要 git 用于版本控制 |
+| 项目依赖 | 目标项目需要有 package.json 或对应包管理文件 |
+
+### 支持的技术栈
+
+| 技术栈 | 支持 |
+|--------|------|
+| JavaScript/TypeScript | ✅ npm/yarn |
+| Python | ✅ pip |
+| Go | ✅ go |
+| Rust | ✅ cargo |
+| Java | ✅ maven/gradle |
+| Swift/iOS | ✅ swift |
 
 ---
 

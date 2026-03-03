@@ -1,6 +1,6 @@
 {
   "name": "longcode",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "长时间自主开发代理 - 从需求收集到代码部署的全流程自动化",
   "author": "Claude + User",
   "category": "automation",

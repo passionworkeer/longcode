@@ -458,10 +458,20 @@ Git 分支: feature/longcode-1234567890
 ```
 
 **如果是演示模式 (--dry-run):**
-- 只显示要执行的操作，不实际修改文件
-- 不调用子代理实际工作
+- 只显示要执行的操作步骤，**不实际修改文件**
+- **不调用子代理实际工作**，只显示"会调用哪些代理"
 - 显示每个任务的"虚拟"执行过程
-- 适合展示流程和调试
+- 适合展示流程、调试、演示
+
+**执行模式 vs 演示模式:**
+
+| 行为 | 执行模式 | 演示模式 |
+|------|---------|---------|
+| 修改文件 | ✅ 是 | ❌ 否 |
+| 调用子代理 | ✅ 是 | ❌ 否（只显示） |
+| 运行命令 | ✅ 是 | ❌ 否（只显示） |
+| Git 提交 | ✅ 是 | ❌ 否（只显示） |
+| 显示进度 | ✅ 是 | ✅ 是 |
 
 **⚠️ 这是关键原则：执行期间绝对不向用户提问，遇到任何问题都自己解决或跳过！**
 
@@ -575,6 +585,44 @@ Git 提交...
 
 ```
 外部工具验证清单:
+
+⚠️ 首先：检测项目技术栈
+
+```
+项目技术栈检测:
+
+1. 检查文件存在:
+   - package.json → JavaScript/TypeScript (npm/yarn)
+   - requirements.txt → Python (pip)
+   - go.mod → Go
+   - Cargo.toml → Rust
+   - pom.xml / build.gradle → Java
+   - Podfile / Package.swift → iOS/Swift
+   - composer.json → PHP
+
+2. 选择对应的工具:
+   | 技术栈 | 构建命令 | 测试命令 | Linter | 安全扫描 |
+   |--------|---------|---------|--------|-----------|
+   | JS/TS | npm run build | npm test | ESLint | npm audit |
+   | Python | pip install | pytest | flake8 | bandit |
+   | Go | go build | go test | golint | gosec |
+   | Rust | cargo build | cargo test | clippy | - |
+   | Java | mvn/gradle | mvn/gradle test | - | - |
+   | Swift | swift build | swift test | swiftlint | - |
+
+3. 工具存在性检查:
+   在运行任何命令前，先检查工具是否安装:
+   ```
+   which npm || which yarn || echo "⚠️ 无 npm/yarn"
+   which tsc || echo "⚠️ 无 TypeScript"
+   which eslint || echo "⚠️ 无 ESLint"
+   ```
+   如果工具不存在:
+   - 记录警告
+   - 尝试跳过该检查
+   - 继续其他检查
+   - 不要因为缺少工具而完全失败
+```
 
 1. 编译检查:
    - 前端: npm run build / yarn build
