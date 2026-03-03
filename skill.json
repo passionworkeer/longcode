@@ -73,8 +73,11 @@
     "prompt.md",
     "skill.md",
     "README.md",
+    "OVERVIEW.md",
     "COMPETITIVE_ANALYSIS.md",
-    "OPTIMIZATION.md"
+    "OPTIMIZATION.md",
+    "CRITIQUE_RESPONSE.md",
+    "agents/"
   ],
   "dependencies": [
     "planner",
